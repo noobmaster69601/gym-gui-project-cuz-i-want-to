@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnchorPane prefHeight="300" prefWidth="400" styleClass="form-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectgym.gui.MemberDetailsController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+    <VBox alignment="TOP_CENTER" spacing="15">
+        <Label styleClass="form-title" text="Member Details" />
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+            </columnConstraints>
+            <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="idLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="nameLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Age:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="ageLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Birthdate:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="birthdateLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Plan:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label fx:id="planLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label fx:id="priceLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Join Date:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Label fx:id="joinDateLabel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        </GridPane>
+        <Button onAction="#handleClose" styleClass="action-button" text="Close" />
+    </VBox>
+</AnchorPane>

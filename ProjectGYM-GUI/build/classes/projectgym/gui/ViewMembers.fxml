@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500" prefWidth="800" styleClass="main-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/1.8.0_202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectgym.gui.ViewMembersController">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            
+            <Label styleClass="form-title" text="Member Database">
+                <font>
+                    <Font name="System Bold" size="18" />
+                </font>
+            </Label>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Button fx:id="backBtn" mnemonicParsing="false" onAction="#handleBack" styleClass="cancel-button" text="Back">
+                    <font>
+                        <Font name="System Bold" size="12" />
+                    </font>
+                </Button>
+                <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#handleDelete" styleClass="delete-button" text="Delete">
+                    <font>
+                        <Font name="System Bold" size="12" />
+                    </font>
+                </Button>
+                <Button fx:id="editBtn" mnemonicParsing="false" onAction="#handleEdit" styleClass="action-button" text="Edit">
+                    <font>
+                        <Font name="System Bold" size="12" />
+                    </font>
+                </Button>
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Search:" />
+                <TextField fx:id="searchField" promptText="Enter name or ID" />
+            </HBox>
+            
+            <TableView fx:id="memberTable" prefHeight="350" prefWidth="780">
+                <columns>
+                    <TableColumn fx:id="idCol" prefWidth="100" text="ID" />
+                    <TableColumn fx:id="nameCol" prefWidth="150" text="Name" />
+                    <TableColumn fx:id="ageCol" prefWidth="80" text="Age" />
+                    <TableColumn fx:id="birthdateCol" prefWidth="120" text="Birthdate" />
+                    <TableColumn fx:id="planCol" prefWidth="100" text="Plan" />
+                    <TableColumn fx:id="priceCol" prefWidth="100" text="Price" />
+                    <TableColumn fx:id="joinDateCol" prefWidth="120" text="Join Date" />
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>

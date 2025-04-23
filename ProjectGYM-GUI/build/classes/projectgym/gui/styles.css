@@ -1,0 +1,447 @@
+/* 
+    Modern Red-Themed Gym Management Application
+    Created: April 15, 2025
+*/
+
+/* ------- FONTS ------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ------- GLOBAL STYLES ------- */
+.root {
+    -fx-font-family: 'Montserrat', sans-serif;
+    -fx-background-color: #1a1a1a;
+    
+    /* Main color palette */
+    -fx-red-primary: #e63946;
+    -fx-red-hover: #ff4d5e;
+    -fx-red-dark: #c1121f;
+    -fx-dark-gray: #2d3142;
+    -fx-medium-gray: #3d3d3d;
+    -fx-light-gray: #f2f2f2;
+    -fx-accent: #ffc857;
+}
+
+/* ------- PANES ------- */
+.main-pane {
+    -fx-background-color: linear-gradient(to bottom right, #232526, #414345);
+    -fx-background-radius: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);
+}
+
+.form-pane {
+    -fx-background-color: #232526;
+    -fx-background-radius: 0px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0, 0, 5);
+    -fx-padding: 0px;
+}
+
+/* ------- LABELS ------- */
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+.form-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-red-primary;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.3), 5, 0, 0, 0);
+    -fx-padding: 0 0 15px 0;
+}
+
+/* ------- BUTTONS ------- */
+.button {
+    -fx-background-radius: 4px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8px 16px;
+    -fx-font-size: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 1);
+    -fx-text-fill: white;
+}
+
+.action-button {
+    -fx-background-color: -fx-red-primary;
+    -fx-text-fill: white;
+}
+
+.action-button:hover {
+    -fx-background-color: -fx-red-hover;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.4), 8, 0, 0, 0);
+}
+
+.cancel-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #808080;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-text-fill: #b0b0b0;
+}
+
+.cancel-button:hover {
+    -fx-border-color: #a0a0a0;
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+.delete-button {
+    -fx-background-color: #c62828;
+    -fx-text-fill: white;
+}
+
+.delete-button:hover {
+    -fx-background-color: #e53935;
+}
+
+.logout-button {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-border-color: -fx-red-primary;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-text-fill: -fx-red-primary;
+    -fx-font-weight: bold;
+}
+
+.logout-button:hover {
+    -fx-background-color: -fx-red-primary;
+    -fx-text-fill: white;
+}
+
+/* Admin Menu specific styling */
+.menu-button {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-text-fill: white;
+    -fx-min-width: 200px;
+    -fx-min-height: 40px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: -fx-red-primary;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.3), 10, 0, 0, 0);
+}
+
+.menu-button:hover {
+    -fx-background-color: -fx-red-primary;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.5), 15, 0, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+/* ------- TEXT FIELDS AND CONTROLS ------- */
+.text-field {
+    -fx-background-color: #3d3d3d;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #a0a0a0;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px;
+    -fx-border-width: 0;
+    -fx-highlight-fill: -fx-red-primary;
+}
+
+.text-field:focused {
+    -fx-background-color: #4a4a4a;
+    -fx-border-color: -fx-red-primary;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+
+/* ------- COMBO BOX ------- */
+.combo-box {
+    -fx-background-color: #3d3d3d;
+    -fx-background-radius: 4px;
+    -fx-text-fill: white;
+    -fx-mark-color: -fx-red-primary;
+}
+
+.combo-box:focused {
+    -fx-border-color: -fx-red-primary;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #3d3d3d;
+    -fx-padding: 8px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #3d3d3d;
+    -fx-border-color: #555555;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #555555;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: -fx-red-primary;
+}
+
+/* ------- TABLE VIEW ------- */
+.table-view {
+    -fx-background-color: #2d2d2d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -fx-red-primary;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 5px 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+    -fx-border-width: 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #2d2d2d;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 2px;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #353535;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(230, 57, 70, 0.7);
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px;
+}
+
+.table-view .scroll-bar:vertical,
+.table-view .scroll-bar:horizontal {
+    -fx-background-color: #2d2d2d;
+}
+
+.table-view .scroll-bar:vertical .thumb,
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 5em;
+}
+
+.table-view .scroll-bar:vertical .thumb:hover,
+.table-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #777777;
+}
+
+/* ------- SCROLL BARS ------- */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: #2d2d2d;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 5em;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #777777;
+}
+
+/* ------- DIALOG STYLING ------- */
+.dialog-pane {
+    -fx-background-color: #232526;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: white;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: -fx-red-primary;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: -fx-red-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: -fx-red-hover;
+}
+
+/* ------- ANIMATIONS ------- */
+.button {
+    -fx-transition: -fx-background-color 0.3s, -fx-effect 0.3s, -fx-translate-y 0.2s;
+}
+
+.text-field, .combo-box {
+    -fx-transition: -fx-background-color 0.3s, -fx-border-color 0.3s;
+}
+/* ======= TITLE STYLES ======= */
+.app-title {
+    -fx-font-family: 'Montserrat Bold';
+    -fx-font-size: 24px;
+    -fx-fill: #e63946;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.3), 5, 0, 0, 0);
+}
+
+.app-subtitle {
+    -fx-font-family: 'Montserrat';
+    -fx-font-size: 14px;
+    -fx-fill: white;
+}
+
+/* ======= LOGO SECTION ======= */
+.logo-circle {
+    -fx-min-width: 160px;
+    -fx-min-height: 160px;
+}
+
+.logo-circle-bg {
+    -fx-fill: #2d2d2d;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0, 4, 0);
+}
+
+.logo-main-text {
+    -fx-font-family: 'Montserrat Bold';
+    -fx-font-size: 60px;
+    -fx-fill: #e63946;
+    -fx-translate-y: -10;
+}
+
+.logo-sub-text {
+    -fx-font-family: 'Montserrat Bold';
+    -fx-font-size: 18px;
+    -fx-fill: white;
+    -fx-translate-y: 10;
+}
+
+/* ======= MENU SECTION ======= */
+.menu-section {
+    -fx-padding: 30px;
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(230, 57, 70, 0.3);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+}
+
+/* Update existing menu-button style to match SVG */
+.menu-button {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-text-fill: white;
+    -fx-min-width: 200px;
+    -fx-min-height: 40px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #e63946;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.3), 10, 0, 0, 0);
+    -fx-font-family: 'Montserrat Bold';
+}
+
+.menu-button:hover {
+    -fx-background-color: rgba(230, 57, 70, 0.7);
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.5), 15, 0, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+/* Update existing logout-button style */
+.logout-button {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-text-fill: #e63946;
+    -fx-min-width: 200px;
+    -fx-min-height: 40px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #e63946;
+    -fx-border-width: 2px;
+    -fx-font-family: 'Montserrat Bold';
+}
+
+.logout-button:hover {
+    -fx-background-color: rgba(230, 57, 70, 0.1);
+    -fx-text-fill: #ff4d5e;
+}
+/* ------- ANIMATIONS: Enhanced ------- */
+
+/* Smooth scale on hover for key buttons */
+.button:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-transition: -fx-scale-x 0.2s, -fx-scale-y 0.2s, -fx-background-color 0.3s, -fx-effect 0.3s;
+}
+
+/* Logo pulse effect on hover */
+.logo-circle:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(230, 57, 70, 0.5), 20, 0.3, 0, 0);
+    -fx-transition: -fx-scale-x 0.3s, -fx-scale-y 0.3s, -fx-effect 0.3s;
+}
+
+/* Menu button hover - add subtle upward movement + scale */
+.menu-button:hover {
+    -fx-translate-y: -4px;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-transition: -fx-translate-y 0.2s, -fx-scale-x 0.2s, -fx-scale-y 0.2s, -fx-background-color 0.3s, -fx-effect 0.3s;
+}
+
+/* Logout button hover scale */
+.logout-button:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-transition: -fx-scale-x 0.2s, -fx-scale-y 0.2s, -fx-text-fill 0.3s, -fx-background-color 0.3s;
+}
+
+/* Table row hover effect */
+.table-view .table-row-cell:hover {
+    -fx-background-color: #444444;
+    -fx-transition: -fx-background-color 0.3s;
+}
+
+/* Smooth opacity + slight zoom for labels that need attention */
+.form-title {
+    -fx-opacity: 1;
+    -fx-transition: -fx-opacity 0.5s, -fx-scale-x 0.3s, -fx-scale-y 0.3s;
+}
+
+.form-title:hover {
+    -fx-opacity: 0.9;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Add bounce feel on text field focus */
+.text-field:focused {
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-transition: -fx-background-color 0.3s, -fx-border-color 0.3s, -fx-scale-x 0.2s, -fx-scale-y 0.2s;
+}
